@@ -11,15 +11,15 @@ var strArray = str.split('');
 var newWordArray = [];
 
 for (var k = 0; k < wordsCount; k++) {
-    var newWord = [];
+    var newWord = '';  // чтобы задать строчный тип переменной
     var randWordLength = getRandomInt(minLetters, maxLetters);
-    for (var i = 0; i < randWordLength; i++) {
+    for (var i = 0; i < randWordLength; i++) {                
         randomLetter = getRandomInt(0, str.length);
-        newWord.push(strArray[randomLetter]);
-        var returnWord = newWord.join('');
+        newWord += strArray[randomLetter];
     }
-    newWordArray.push(returnWord);
+    newWordArray.push(newWord);
 }
+
 console.log('Сгенерированы следующие слова:');
 console.log(...newWordArray);
 
@@ -32,5 +32,6 @@ for (var charDigit = {}, a = newWordArray, n = 0; n < a.length; n++) {
 for (var n in charDigit) {
     console.log(`${charDigit[n].length} слов с ${n} символами`);	
 }
+
 console.log('Слова сгруппированы в объект по количеству значений в строке:');
 console.log(charDigit);
