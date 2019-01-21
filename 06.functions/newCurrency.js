@@ -3,20 +3,20 @@ function exchange(from, to) {
         UAH : {
             UAH: 1,
             USD: 0.036,
-            EUR: 0.031,
+            EUR: 0.031
         },
         USD : {
-            USD: 1,
             UAH: 27.747,
-            EUR: 0.879,
+            USD: 1,
+            EUR: 0.879
         },
         EUR : {
-            EUR : 1,
-            USD : 1.136,
             UAH : 31.478,
+            USD : 1.136,
+            EUR : 1
         }
     }
-
+    console.table(rates); // for some reason
     if(rates[from] && rates[from][to]){
         currencyValue = +prompt('Количество ' + from + ' для обмена: ', 100);
         while (currencyValue % 1 !== 0 || currencyValue === null) {

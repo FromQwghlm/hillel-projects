@@ -28,15 +28,16 @@ for (var k = 0; k < wordsCount; k++) {
 console.log('Сгенерированы следующие слова:');
 console.log(...newWordArray);
 
-for (var digitWords = {}, a = newWordArray, n = 0; n < a.length; n++) {
-    if (digitWords[a[n].length] === undefined) {
-        digitWords[a[n].length] = [];		
+for (var wordDigits = {}, a = newWordArray, n = 0; n < a.length; n++) {
+    if (wordDigits[a[n].length] === undefined) {
+        wordDigits[a[n].length] = [];		
     }
-    digitWords[a[n].length].push(a[n]);
+    wordDigits[a[n].length].push(a[n]);
 }
-for (var n in digitWords) {
-    console.log(`${digitWords[n].length} ${declension(`${digitWords[n].length}`, ['слово','слова','слов'])} с ${n} символами`);	
+for (var n in wordDigits) {
+    var num = wordDigits[n].length;
+    console.log(`${num} ${declension(`${num}`, ['слово','слова','слов'])} с ${n} символами`);	
 }
 
-console.log('Слова сгруппированы в объект "digitWords" по количеству значений в строке:');
-console.log(digitWords);
+console.log('Слова сгруппированы в объект "wordDigits" по количеству значений в строке:');
+console.log(wordDigits);
