@@ -16,15 +16,15 @@ var strArray = str.split('');
 var newWordArray = [];
 
 for (var k = 0; k < wordsCount; k++) {
-    var newWord = '';  // чтобы задать строчный тип переменной
+    var newWord = [];
     var randWordLength = getRandomInt(minLetters, maxLetters);
-    for (var i = 0; i < randWordLength; i++) {                
-        randomLetter = getRandomInt(0, str.length);
-        newWord += strArray[randomLetter];
+    for (var i = 0; i < randWordLength; i++) {
+        randomLetter = getRandomInt(0, (str.length - 1));
+        newWord.push(strArray[randomLetter]);
+        var returnWord = newWord.join('');
     }
-    newWordArray.push(newWord);
+    newWordArray.push(returnWord);
 }
-
 console.log('Сгенерированы следующие слова:');
 console.log(...newWordArray);
 

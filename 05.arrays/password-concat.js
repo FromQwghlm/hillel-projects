@@ -4,7 +4,7 @@ function getRandomInt (min, max) {
 
 function declension(number, titles) {  
     cases = [2, 0, 1, 1, 1, 2];  
-    return titles[(number % 00 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];  
+    return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];  
 }
 
 var wordsCount = +prompt('Какое количество рандомных значений необходимо создать?', 10);
@@ -16,15 +16,15 @@ var strArray = str.split('');
 var newWordArray = [];
 
 for (var k = 0; k < wordsCount; k++) {
-    var newWord = [];
+    var newWord = '';  // чтобы задать строчный тип переменной
     var randWordLength = getRandomInt(minLetters, maxLetters);
-    for (var i = 0; i < randWordLength; i++) {
-        randomLetter = getRandomInt(0, str.length);
-        newWord.push(strArray[randomLetter]);
-        var returnWord = newWord.join('');
+    for (var i = 0; i < randWordLength; i++) {                
+        randomLetter = getRandomInt(0, (str.length - 1));
+        newWord += strArray[randomLetter];
     }
-    newWordArray.push(returnWord);
+    newWordArray.push(newWord);
 }
+
 console.log('Сгенерированы следующие слова:');
 console.log(...newWordArray);
 
