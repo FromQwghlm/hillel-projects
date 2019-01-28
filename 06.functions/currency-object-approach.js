@@ -1,5 +1,8 @@
 function exchange(from, to) {
-    var rates = {
+    var payValue = 0,
+        from = from.toUpperCase(),
+        to = to.toUpperCase(),
+        rates = {
         UAH : {
             UAH: 1,
             USD: 0.036,
@@ -22,14 +25,14 @@ function exchange(from, to) {
         while (currencyValue % 1 !== 0 || currencyValue === null) {
             currencyValue = +prompt('Повторите ввод');
         }            
-        return (payValue = currencyValue * rates[from][to]);
+        payValue = currencyValue * rates[from][to];
+        alert('Получите ' + payValue + ' ' + to);
+        return payValue;
     } else {
         alert('Введенные валюты не поддерживаются');
     }   
 }
 
-var payValue;
 var fromCurrency = prompt('Из какой валюты конвертировать? (UAH, USD, EUR)', 'USD');
 var toCurrency = prompt('В какую валюту конвертировать? (UAH, USD, EUR)', 'EUR');
 exchange(fromCurrency, toCurrency);
-alert('Получите ' + payValue + ' ' + toCurrency);
