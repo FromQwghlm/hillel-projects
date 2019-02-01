@@ -1,4 +1,4 @@
-// Write Javascript code!
+// addScript SECTION
 
 function addScript() {
     var idName = 'temporary';
@@ -14,6 +14,8 @@ var elem = document.querySelectorAll("a[href='#']");
 for (var i = 0; i < elem.length; i++) {
     elem[i].addEventListener('click', addScript, false);
 }
+
+// toggleDocs SECTION
 
 function toggleDocs(event) {
     if (event.target && event.target.className == 'clickable-heading') {

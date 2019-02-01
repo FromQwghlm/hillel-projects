@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>hillel-projects</title>
-    <style>
-        h1, h2 {
-            font-family: Lato;
-            font-size: 18px;
-            color: maroon;
-        }
-        h1.clickable-heading:hover {
-            background-color: lavender;
-            cursor:pointer;
-        }
-    </style>
- 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>hillel-projects</title>
+<style>
+    h1, h2 {
+        font-family: Lato;
+        font-size: 18px;
+        color: maroon;
+    }
+    h1.clickable-heading:hover {
+        background-color: lavender;
+        cursor:pointer;
+    }
+    #test-area {
+        background-color: gainsboro;
+        margin: 5px;
+        padding: 5px; 
+    }
+    #clock {
+        font-family: 'Share Tech Mono', monospace;
+        letter-spacing: 0.05em;
+        letter-spacing: 0.05em;
+        color: maroon;
+    }
+</style>
 </head>
 <body>
     <h1 class ="clickable-heading">Theme: 01.introduction</h1>
@@ -93,14 +103,14 @@
     <h1>Theme: 08.functions.app1</h1>
     <div style="display: block">
         <ul id="08.functions.app.1">
-            <li><a href="#"></a></li>
+            <li><a href="#">watch-task.js</a></li>
             <li><a href="#"></a></li>
             <li><a href="#"></a></li>
         </ul>
     </div>
-    <div style="display: block">
-        <ul id="test">
-            <li><a href="#">test.js</a></li>
+    <div id="test-area" style="display: none">
+        <div id="clock"></div>
+        <ul id="tasks-area">
         </ul>
     </div>
 <script src="script.js"></script>
