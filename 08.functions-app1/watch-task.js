@@ -12,7 +12,6 @@ function createTask(title, description, startDate, endDate) {
     }
 }
 
-// --------------------------------------------------------------------- //
 function appendTask(tag, text, parent) {
 	var parentArea = document.getElementById(parent);
     var tag = document.createElement(tag);
@@ -20,7 +19,6 @@ function appendTask(tag, text, parent) {
     parentArea.appendChild(tag);
 }
 
-// --------------------------------------------------------------------- //
 function createTaskNode(amount) {
     var amount = amount || 5,
 	    arrayTask = [];
@@ -34,38 +32,22 @@ function createTaskNode(amount) {
 	return arrayTask;
 }
 
-// --------------------------------------------------------------------- //
-function timeFormat(time) {
-return time = zeroPad(time.getHours(), 2) + ':' + zeroPad(time.getMinutes(), 2) + ':' + zeroPad(time.getSeconds(), 2);
-}
-
-function zeroPad(num, digit) {
-    var zero = '';
-    for (var i = 0; i < digit; i++) {
-        zero += '0';
-    }
-    
-    return (zero + num).slice(-digit);
-}
-
-// --------------------------------------------------------------------- //
 function taskCheck(arrayTask, time) {
 	var currentDate = Math.floor(time.getTime() / 1000);
 	arrayTask.forEach(task => {
         var taskDate = Math.floor(task.start.getTime() / 1000);
-        var addInfo = ' (created at ' + timeFormat(task.start) + ')';
+        var addInfo = ' (created at ' + time.toLocaleTimeString() + ')';
 		if (taskDate === currentDate) appendTask('li', task.title  + addInfo, 'tasks-area');
 	});
 }
 
-// --------------------------------------------------------------------- //
 function main() {
 	var time = new Date();
     var interval = 1000;
     var iterrLimit = 1;
     var clock = document.getElementById('clock');
     
-    clock.innerText = 'System time: ' + timeFormat(time);
+    clock.innerText = 'System time: ' + time.toLocaleTimeString();
     var arrayTask = createTaskNode(5);
 
 	var timerId = setInterval(function() {
@@ -73,7 +55,7 @@ function main() {
         time.setTime(time.getTime() + interval);
         if (iterrLimit == 10) {
             clearInterval(timerId);
-            appendTask('span', 'stop demo at ' + timeFormat(time), 'test-area');
+            appendTask('span', 'stop demo at ' + time.toLocaleTimeString(), 'test-area');
         }
         iterrLimit++;
     }, interval);
