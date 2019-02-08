@@ -58,10 +58,7 @@ function TaxInfo(employee) {
 function EmployeeResume(employee) {
 	this.fullName = employee.fullName;
 	this.position = employee.technology;
-}
-
-EmployeeResume.prototype.hello = function () {
-	console.log(`Hello, World! My name's ${this.name} ${this.surname}. I would like to get a job on position of ${this.position} developer.`);
+	this.skillLevel = employee.skillLevel;
 }
 
 Employee.levels = ['Junior', 'Middle', 'Senior', 'Lead'];
