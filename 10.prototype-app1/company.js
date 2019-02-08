@@ -58,7 +58,6 @@ function TaxInfo(employee) {
 function EmployeeResume(employee) {
 	this.fullName = employee.fullName;
 	this.position = employee.technology;
-	this.skillLevel = employee.skillLevel;
 }
 
 Employee.levels = ['Junior', 'Middle', 'Senior', 'Lead'];
