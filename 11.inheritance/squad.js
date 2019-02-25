@@ -46,14 +46,14 @@ Squad.prototype = {
 		});
 	},
 	restoreHealth: function (someUnit) {
-		if (someUnit) {
-			this.unit[someUnit].currentHealth = this.unit[someUnit].maxHealth;
-		}
+		someUnit >= 0
+			?	this.unit[someUnit].currentHealth = this.unit[someUnit].maxHealth
+			:	this.unit.forEach(elem => {elem.currentHealth = elem.maxHealth})
 	},
 	restoreStamina: function (someUnit) {
-		if (someUnit) {
-			this.unit[someUnit].currentStamina = this.unit[someUnit].maxStamina;
-		}
+		someUnit >= 0
+			?	this.unit[someUnit].currentStamina = this.unit[someUnit].maxStamina
+			:	this.unit.forEach(elem => {elem.currentStamina = elem.maxStamina})
 	},
 	combineUnit: function (unit) {
 		this.unit = this.unit.concat(unit);
@@ -81,8 +81,8 @@ Squad.prototype = {
 	},
 	clone: function (resource) {
 		resource = (typeof resource === 'number') 
-					? this.unit[resource] 
-					: resource;
+			?	this.unit[resource] 
+			:	resource;
 		this.unit.push(new Resource(
 			resource.resType,
 			resource.maxHealth,
