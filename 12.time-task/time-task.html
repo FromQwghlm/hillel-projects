@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>hillel-projects</title>
+<style>
+    h1, h2 {
+        font-family: Lato;
+        font-size: 18px;
+        color: maroon;
+    }
+    h1.clickable-heading:hover {
+        background-color: lavender;
+        cursor:pointer;
+    }
+    #test-area {
+        background-color: gainsboro;
+        padding: 7px;
+        height: 120px;
+        width: 300px;
+    }
+    #clock {
+        font-family: 'Share Tech Mono', monospace;
+        letter-spacing: 0.05em;
+        letter-spacing: 0.05em;
+        color: maroon;
+    }
+    #tasks-area li {animation:fading 3s} @keyframes fading{0%{opacity:0}100%{opacity:1}}
+</style>
+</head>
+<body>
+    <h1 class ="clickable-heading">Theme: 12.time-task</h1>
+    <div style="display: block">
+        <ul id="12.time-task">
+            <li><a href="#">time-task.js</a></li>
+        </ul>
+    </div>
+    <div id="test-area" style="display: none">
+        <div id="clock"></div>
+        <ul id="tasks-area">
+        </ul>
+    </div>
+<script src="time-task.js"></script>
+</body>
+</html>

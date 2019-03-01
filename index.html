@@ -17,8 +17,9 @@
     }
     #test-area {
         background-color: gainsboro;
-        margin: 5px;
-        padding: 5px; 
+        padding: 7px;
+        height: 120px;
+        width: 300px;
     }
     #clock {
         font-family: 'Share Tech Mono', monospace;
@@ -26,6 +27,7 @@
         letter-spacing: 0.05em;
         color: maroon;
     }
+    #tasks-area li {animation:fading 3s} @keyframes fading{0%{opacity:0}100%{opacity:1}}
 </style>
 </head>
 <body>
@@ -122,6 +124,12 @@
     <div style="display: block">
         <ul id="11.inheritance">
             <li><a href="#">squad.js</a></li>
+        </ul>
+    </div>
+    <h1 class ="clickable-heading">Theme: 12.time-task</h1>
+    <div style="display: block">
+        <ul id="12.time-task">
+            <li><a href="#">time-task.js</a></li>
         </ul>
     </div>
     <div id="test-area" style="display: none">
