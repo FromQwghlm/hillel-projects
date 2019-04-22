@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Star Wars API</title>
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        .characters {
+            width: 400px;
+            margin: 0 auto;
+            background-color: #F1E0D6;	
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            padding: 0px 0px 20px 0px;
+            border-bottom: 2px solid white;
+        }
+
+        .navigation button {
+            height: 30px;
+            width: 60px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        ul.page {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            list-style-type: none;
+            margin: 0 auto;
+            padding: 0px;
+        }
+
+        .page li {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 5px;
+            margin: 1px;
+            background-color: #BF9990;
+            text-align: center;
+        }
+
+        .page li:hover {
+            background-color: #F1E0D6;
+        }
+    </style>
+</head>
+
+<body>
+	<div class="characters">
+        <h2>Star Wars API Characters</h2>
+        <div class="navigation">
+            <button class="prev">&#60;&#60;</button>
+            <button class="next">&#62;&#62;</button>
+        </div>
+        <ul class="page"></ul>
+	</div>
+
+	<script src="main.js"></script>
+</body>
+
+</html>
